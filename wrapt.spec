@@ -4,7 +4,7 @@
 #
 Name     : wrapt
 Version  : 1.10.8
-Release  : 15
+Release  : 16
 URL      : https://pypi.python.org/packages/source/w/wrapt/wrapt-1.10.8.tar.gz
 Source0  : https://pypi.python.org/packages/source/w/wrapt/wrapt-1.10.8.tar.gz
 Summary  : Module for decorators, wrappers and monkey patching.
