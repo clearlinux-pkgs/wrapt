@@ -4,7 +4,7 @@
 #
 Name     : wrapt
 Version  : 1.10.11
-Release  : 27
+Release  : 28
 URL      : http://pypi.debian.net/wrapt/wrapt-1.10.11.tar.gz
 Source0  : http://pypi.debian.net/wrapt/wrapt-1.10.11.tar.gz
 Summary  : Module for decorators, wrappers and monkey patching.
