@@ -4,13 +4,12 @@
 #
 Name     : wrapt
 Version  : 1.10.11
-Release  : 28
+Release  : 29
 URL      : http://pypi.debian.net/wrapt/wrapt-1.10.11.tar.gz
 Source0  : http://pypi.debian.net/wrapt/wrapt-1.10.11.tar.gz
 Summary  : Module for decorators, wrappers and monkey patching.
 Group    : Development/Tools
 License  : BSD-2-Clause
-Requires: wrapt-legacypython
 Requires: wrapt-python3
 Requires: wrapt-python
 BuildRequires : pbr
@@ -43,19 +42,9 @@ BuildRequires : setuptools
         Documentation
         -------------
 
-%package legacypython
-Summary: legacypython components for the wrapt package.
-Group: Default
-Requires: python-core
-
-%description legacypython
-legacypython components for the wrapt package.
-
-
 %package python
 Summary: python components for the wrapt package.
 Group: Default
-Requires: wrapt-legacypython
 Requires: wrapt-python3
 
 %description python
@@ -79,25 +68,18 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1507181268
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1523310710
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1507181268
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
-
-%files legacypython
-%defattr(-,root,root,-)
-/usr/lib/python2*/*
 
 %files python
 %defattr(-,root,root,-)
