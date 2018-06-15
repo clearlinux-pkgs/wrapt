@@ -4,17 +4,17 @@
 #
 Name     : wrapt
 Version  : 1.10.11
-Release  : 32
+Release  : 33
 URL      : http://pypi.debian.net/wrapt/wrapt-1.10.11.tar.gz
 Source0  : http://pypi.debian.net/wrapt/wrapt-1.10.11.tar.gz
 Summary  : Module for decorators, wrappers and monkey patching.
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: wrapt-python3
+Requires: wrapt-license
 Requires: wrapt-python
 BuildRequires : pbr
 BuildRequires : pip
-
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
@@ -42,6 +42,14 @@ BuildRequires : setuptools
         Documentation
         -------------
 
+%package license
+Summary: license components for the wrapt package.
+Group: Default
+
+%description license
+license components for the wrapt package.
+
+
 %package python
 Summary: python components for the wrapt package.
 Group: Default
@@ -68,11 +76,13 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523310710
+export SOURCE_DATE_EPOCH=1529094170
 python3 setup.py build -b py3
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/wrapt
+cp LICENSE %{buildroot}/usr/share/doc/wrapt/LICENSE
 python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -80,6 +90,10 @@ echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/wrapt/LICENSE
 
 %files python
 %defattr(-,root,root,-)
