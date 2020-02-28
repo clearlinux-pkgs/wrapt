@@ -1,2 +1,6 @@
 # This file contains recursive sources that require this package
 astroid
+ceph
+debtcollector
+python-glanceclient
+tensorflow-estimator
