@@ -4,7 +4,7 @@
 #
 Name     : wrapt
 Version  : 1.12.1
-Release  : 60
+Release  : 61
 URL      : https://files.pythonhosted.org/packages/82/f7/e43cefbe88c5fd371f4cf0cf5eb3feccd07515af9fd6cf7dbf1d1793a797/wrapt-1.12.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/82/f7/e43cefbe88c5fd371f4cf0cf5eb3feccd07515af9fd6cf7dbf1d1793a797/wrapt-1.12.1.tar.gz
 Summary  : Module for decorators, wrappers and monkey patching.
